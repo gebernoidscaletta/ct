@@ -9,5 +9,5 @@
     ],
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "python.envFile": "${workspaceFolder}/.env"
-  }
+    "python.envFile": "D:/code/ct/.env"
+}
