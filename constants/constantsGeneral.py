@@ -1,6 +1,6 @@
 class ConstantsGeneral:
-    _API_USERNAME = "CART00101"
-    _API_PASSWORD = ""
+    _API_USERNAME = "CART00013"
+    _API_PASSWORD = "13f582b1290c43a1a548a4f104d3002444dd5a1a30264209f93731629106356e"
     _INDONESIA_BASE_URL = "https://fleetapi-id.cartrack.com/rest"
     _THAILAND_BASE_URL = "https://fleetapi-th.cartrack.com/rest"
     _MALAYSIA_BASE_URL = "https://fleetapi-my.cartrack.com/rest"
