@@ -9,13 +9,13 @@ import time
 log = Log()
 
 
-fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
+fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceGroupsEndpoint()}"
 
 # Basic Auth credentials
 USERNAME = ConstantsGeneral.getApiUsername()
 PASSWORD = ConstantsGeneral.getApiPassword()
 
-fileDir = "D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_2.xlsx"
+fileDir = "D:/New/Programming/export/BAHA00004_GEOFENCE-GROUP_2.xlsx"
 
 log.info(f"Delete Bulk Geofence Groups From XLSX")
 log.info(f"Username  : {USERNAME}")
@@ -25,25 +25,25 @@ log.info(f"Initialize")
 df = pd.read_excel(fileDir)
 log.info(f"File Directory : {fileDir}")
 
-# Check if 'geofence_id' column exists
-if 'geofence_id' not in df.columns:
-    log.error ("No 'geofence_id' column found in the Excel File")
+# Check if 'group_id' column exists
+if 'group_id' not in df.columns:
+    log.error ("No 'group_id' column found in the Excel File")
     exit()
 
 # Loop through each geofence_id
 for idx, row in df.iterrows():
-    geofence_id = row['geofence_id']
-    delete_url = f"{fullUrl}/{geofence_id}"
+    group_id = row['group_id']
+    delete_url = f"{fullUrl}/{group_id}"
     
-    log.info(f"Delete Geofence - {geofence_id}")
+    log.info(f"Delete Geofence - {group_id}")
 
     response = requests.delete(delete_url, auth=HTTPBasicAuth(USERNAME, PASSWORD))
     
     if response.status_code == 200:
-        log.info(f"Successfully deleted {geofence_id}")
-        print(f"✅ Successfully deleted {geofence_id}")
+        log.info(f"Successfully deleted {group_id}")
+        print(f"✅ Successfully deleted {group_id}")
     else:
-        log.error(f"❌ Failed to delete {geofence_id}. Status code: {response.status_code}")
+        log.error(f"❌ Failed to delete {group_id}. Status code: {response.status_code}")
     
     # Optional: Delay a little to avoid flooding the server
     time.sleep(0.1)

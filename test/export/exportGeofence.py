@@ -21,7 +21,7 @@ geofences = []
 # Pagination start
 page = 1
 limit = 1000
-sequence = 1
+sequence = 3
 
 while True:
     log.info(f"Retrieve All Geofences To XLSX")
@@ -75,6 +75,7 @@ while True:
 
     # Otherwise, go to next page
     page += 1
+    sequence += 1
     
 # Create DataFrame
 df = pd.DataFrame(geofences)

@@ -9,7 +9,7 @@ log = Log ()
 username = ConstantsGeneral.getApiUsername()
 password = ConstantsGeneral.getApiPassword()
 baseUrl = ConstantsGeneral.getIndonesiaBaseUrl()
-endpoint = ConstantsEndpoint.getgGeofenceGroupsEndpoint()
+endpoint = ConstantsEndpoint.getGeofenceGroupsEndpoint()
 
 auth = f"{username}:{password}"
 
@@ -24,7 +24,7 @@ url = f"{baseUrl}{endpoint}"
 log.info(f"Full URL : {url}")
 payload = json.dumps(
     {
-        "name": "Jawa Barat",
+        "name": "Jawa Timur",
         "description": "Geofence Import",
         "subuser_id": ""
         }

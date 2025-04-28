@@ -7,5 +7,5 @@ class ConstantsEndpoint:
         return ConstantsEndpoint._GEOFENCE
     
     @staticmethod
-    def getgGeofenceGroupsEndpoint():
+    def getGeofenceGroupsEndpoint():
         return ConstantsEndpoint._GEOFENCE_GROUPS

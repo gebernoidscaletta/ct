@@ -9,7 +9,7 @@ log = Log()
 
 # Base URL
 BASEURL = ConstantsGeneral.getIndonesiaBaseUrl()
-ENDPOINT = ConstantsEndpoint.getgGeofenceGroupsEndpoint()
+ENDPOINT = ConstantsEndpoint.getGeofenceGroupsEndpoint()
 FULLURL = f"{BASEURL}{ENDPOINT}"
 
 # Your Basic Auth credentials
