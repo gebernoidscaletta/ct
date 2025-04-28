@@ -1,7 +1,7 @@
 import logging
 
 class Log:
-    logging.basicConfig(format='%(asctime)s [PY-SNAP] - %(message)s',
+    logging.basicConfig(format='%(asctime)s [TIM-RUSUH - CT] - %(message)s',
                         filemode='w')
     LOGGER = logging.getLogger()
     MAGENTA = "\u001B[35m"
