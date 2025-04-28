@@ -8,9 +8,8 @@ import time
 
 log = Log()
 
-# Base URL
-FULLURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint}"
-BASE_URL = "https://fleetapi-id.cartrack.com/rest/geofences"
+
+fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
 
 # Basic Auth credentials
 USERNAME = ConstantsGeneral.getApiUsername()
@@ -18,7 +17,7 @@ PASSWORD = ConstantsGeneral.getApiPassword()
 
 fileDir = "D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_2.xlsx"
 
-log.info(f"Delete Bulk Geofence From XLSX")
+log.info(f"Delete Bulk Geofence Groups From XLSX")
 log.info(f"Username  : {USERNAME}")
 log.info(f"Initialize")
 
@@ -34,7 +33,7 @@ if 'geofence_id' not in df.columns:
 # Loop through each geofence_id
 for idx, row in df.iterrows():
     geofence_id = row['geofence_id']
-    delete_url = f"{BASE_URL}/{geofence_id}"
+    delete_url = f"{fullUrl}/{geofence_id}"
     
     log.info(f"Delete Geofence - {geofence_id}")
 

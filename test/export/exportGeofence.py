@@ -8,7 +8,7 @@ from util.utilLogging import Log
 log = Log()
 
 # Base URL
-BASEURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint}"
+BASEURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
 # BASE_URL = "https://fleetapi-id.cartrack.com/rest/geofences"
 
 # Your Basic Auth credentials
@@ -27,6 +27,7 @@ while True:
     log.info(f"Retrieve All Geofences To XLSX")
     log.info(f"Username  : {USERNAME}")
     log.info(f"Initialize")
+    log.info(f"Full URL : {BASEURL}")
     log.info(f"Fetching page {page}")
 
 
@@ -82,4 +83,4 @@ sequence += 1
 # Save to Excel
 output_file = f"D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_{sequence}.xlsx"
 df.to_excel(output_file, index=False)
-log.info(f"Export completede : {output_file}")
+log.info(f"Export completed : {output_file}")

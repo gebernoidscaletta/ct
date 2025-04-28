@@ -1,11 +1,11 @@
 class ConstantsEndpoint:
-    _GEOFENCE_INSERT = "/geofences"
-    _GEOFENCE_RETRIEVE_GROUPS = "/geofences/groups"
+    _GEOFENCE = "/geofences"
+    _GEOFENCE_GROUPS = "/geofences/groups"
 
     @staticmethod
-    def geofenceInsert():
-        return ConstantsEndpoint._GEOFENCE_INSERT
+    def getGeofenceEndpoint():
+        return ConstantsEndpoint._GEOFENCE
     
     @staticmethod
-    def geofenceRetrieveAllGroups():
-        return ConstantsEndpoint._GEOFENCE_RETRIEVE_GROUPS
+    def getgGeofenceGroupsEndpoint():
+        return ConstantsEndpoint._GEOFENCE_GROUPS
