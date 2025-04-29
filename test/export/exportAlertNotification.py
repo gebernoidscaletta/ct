@@ -44,7 +44,7 @@ def fetchMonth(startDate, endDate):
     return allData
 
 # Loop Jan to Aug
-for month in range(8, 9):
+for month in range(12, 13):
     start = datetime(2024, month, 1)
     end = (start + timedelta(days=32)).replace(day=1)  # first day of next month
     
