@@ -8,7 +8,7 @@ from util.utilLogging import Log
 log = Log()
 
 # Base URL
-BASEURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint}"
+BASEURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
 # BASE_URL = "https://fleetapi-id.cartrack.com/rest/geofences"
 
 # Your Basic Auth credentials
@@ -38,6 +38,7 @@ while True:
 
     # Perform the request with Basic Auth
     response = requests.get(BASEURL, params=params, auth=HTTPBasicAuth(USERNAME, PASSWORD))
+    log.info(BASEURL)
     
     if response.status_code != 200:
         log.error(f"Failed to fetch page {page}. Status Code : {response.status_code}")
@@ -80,6 +81,7 @@ df = pd.DataFrame(geofences)
 sequence += 1
 
 # Save to Excel
-output_file = f"D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_{sequence}.xlsx"
+# output_file = f"D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_{sequence}.xlsx"
+output_file = f"Z:/Programming/export/{USERNAME}_EXPORT-GEOFENCE_{sequence}.xlsx"
 df.to_excel(output_file, index=False)
 log.info(f"Export completede : {output_file}")

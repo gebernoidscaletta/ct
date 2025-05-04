@@ -44,14 +44,14 @@ def fetchMonth(startDate, endDate):
     return allData
 
 # Loop Jan to Aug
-for month in range(12, 13):
-    start = datetime(2024, month, 1)
+for month in range(1, 5):
+    start = datetime(2025, month, 1)
     end = (start + timedelta(days=32)).replace(day=1)  # first day of next month
     
     records = fetchMonth(start, end)
     if records:
         df = pd.DataFrame(records)
-        filename = f"Z:/Programming/export/{formatTime}_ALERTS_{start.strftime('%Y_%m')}.xlsx"
+        filename = f"Z:/Programming/export/{formatTime}_{ConstantsGeneral.getApiUsername()}_ALERTS_{start.strftime('%Y_%m')}.xlsx"
         df.to_excel(filename, index=False)
         print(f"Exported {filename} ✅")
     else:

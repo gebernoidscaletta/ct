@@ -16,7 +16,7 @@ BASE_URL = "https://fleetapi-id.cartrack.com/rest/geofences"
 USERNAME = ConstantsGeneral.getApiUsername()
 PASSWORD = ConstantsGeneral.getApiPassword()
 
-fileDir = "D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_4.xlsx"
+fileDir = "Z:/Programming/export/BAHA00004_EXPORT-GEOFENCE_6.xlsx"
 
 log.info(f"Delete Bulk Geofence From XLSX")
 log.info(f"Username  : {USERNAME}")

@@ -6,6 +6,8 @@ class ConstantsEndpoint:
     _ALERT_GEOFENCES = "/alerts/geofences"
     _ALERT_NOTIFICATION = "/alerts/notifications"
     _ALERT_NOTIFICATION_TYPES = "/alert/notifications/types"
+    _FUEL_FILLS = "/fuel/fills"
+    _VEHICLES = "/vehicles"
     _VEHICLES_GROUPS = "/vehicles/groups"
 
     @staticmethod
@@ -31,6 +33,14 @@ class ConstantsEndpoint:
     @staticmethod
     def getAlertNotificationEndpoint():
         return ConstantsEndpoint._ALERT_NOTIFICATION
+    
+    @staticmethod
+    def getFuelFillsEndpoint():
+        return ConstantsEndpoint._FUEL_FILLS
+    
+    @staticmethod
+    def getVehicleEndpoint():
+        return ConstantsEndpoint._VEHICLES
     
     @staticmethod
     def getVehicleGroupsEndpoint():

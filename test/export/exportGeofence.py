@@ -82,6 +82,6 @@ df = pd.DataFrame(geofences)
 sequence += 1
 
 # Save to Excel
-output_file = f"D:/New/Programming/export/BAHA00004_EXPORT-GEOFENCE_{sequence}.xlsx"
+output_file = f"Z:/Programming/export/{ConstantsGeneral.getApiUsername()}_EXPORT-GEOFENCE_{sequence}.xlsx"
 df.to_excel(output_file, index=False)
 log.info(f"Export completed : {output_file}")

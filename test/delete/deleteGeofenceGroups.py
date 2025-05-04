@@ -15,7 +15,7 @@ fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofe
 USERNAME = ConstantsGeneral.getApiUsername()
 PASSWORD = ConstantsGeneral.getApiPassword()
 
-fileDir = "D:/New/Programming/export/BAHA00004_GEOFENCE-GROUP_2.xlsx"
+fileDir = "Z:/Programming/export/BAHA00004_GEOFENCE-GROUP_2.xlsx"
 
 log.info(f"Delete Bulk Geofence Groups From XLSX")
 log.info(f"Username  : {USERNAME}")
