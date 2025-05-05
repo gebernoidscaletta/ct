@@ -6,15 +6,7 @@ from constants.constantsEndpoint import ConstantsEndpoint
 from util.utilLogging import Log
 
 log = Log()
-
-# Base URL
-BASEURL = ConstantsGeneral.getIndonesiaBaseUrl()
-ENDPOINT = ConstantsEndpoint.getGeofenceGroupsEndpoint()
-FULLURL = f"{BASEURL}{ENDPOINT}"
-
-# Your Basic Auth credentials
-USERNAME = ConstantsGeneral.getApiUsername()
-PASSWORD = ConstantsGeneral.getApiPassword()
+fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceGroupsEndpoint()}"
 
 # Empty list to store geofence data
 geofences = []
@@ -26,7 +18,7 @@ sequence = 1
 
 while True:
     log.info(f"Retrieve All Geofences Groups")
-    log.info(f"Username  : {USERNAME}")
+    log.info(f"Username  : {ConstantsGeneral.getApiUsername()}")
     log.info(f"Initialize")
     log.info(f"Fetching page {page}")
 
@@ -38,9 +30,10 @@ while True:
     }
 
     # Perform the request with Basic Auth
-    response = requests.get(url = f"{BASEURL}{ENDPOINT}",
+    response = requests.get(fullUrl,
                             params = params, 
-                            auth = HTTPBasicAuth(USERNAME, PASSWORD))
+                            auth = HTTPBasicAuth(ConstantsGeneral.getApiUsername(),
+                                                 ConstantsGeneral.getApiPassword()))
     
     if response.status_code != 200:
         log.error(f"Failed to fetch page {page}. Status Code : {response.status_code}")
@@ -60,7 +53,8 @@ while True:
     for item in data:
         geofences.append({
             "group_id": item.get("group_id"),
-            "name": item.get("name")
+            "name": item.get("name"),
+            "description": item.get("description")
         })
 
     # Pagination control
@@ -79,10 +73,12 @@ while True:
     page += 1
 
 # Create DataFrame
-df = pd.DataFrame(geofences)
+log.info("Data")
+log.info(geofences)
+# df = pd.DataFrame(geofences)
 sequence += 1
 
 # Save to Excel
-output_file = f"D:/New/Programming/export/BAHA00004_GEOFENCE-GROUP_{sequence}.xlsx"
-df.to_excel(output_file, index=False)
-log.info(f"Export completed : {output_file}")
+# output_file = f"D:/New/Programming/export/BAHA00004_GEOFENCE-GROUP_{sequence}.xlsx"
+# df.to_excel(output_file, index=False)
+# log.info(f"Export completed : {output_file}")

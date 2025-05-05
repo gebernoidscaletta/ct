@@ -10,7 +10,7 @@ from util.utilLogging import Log
 
 log = Log()
 fullUrl = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
-folderPath = Path("Z:/Geofence/Kecamatan Indonesia/Converted/KalimantanBarat/KalimantanBarat-JSON")
+folderPath = Path("D:/New/Geofence/Kecamatan Indonesia/Converted/BangkaBelitung/BangkaBelitung-JSON")
 jsonFiles = list(folderPath.glob('*.json'))
 succImport = 0
 failImport = 0 

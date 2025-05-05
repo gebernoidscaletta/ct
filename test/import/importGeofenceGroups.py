@@ -24,8 +24,8 @@ url = f"{baseUrl}{endpoint}"
 log.info(f"Full URL : {url}")
 payload = json.dumps(
     {
-        "name": "Jawa Timur",
-        "description": "Geofence Import",
+        "name": "Bengkulu",
+        "description": "Kecamatan Provinsi Bengkulu",
         "subuser_id": ""
         }
     )

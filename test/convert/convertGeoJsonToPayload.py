@@ -25,7 +25,7 @@ def process_single_file(file_path, output_folder):
         #     geofence_group_ids = 2778  # default value
         #     area_description = f"Kecamatan {file_path.stem}"  # default value
         # elif "Bali":
-        geofence_group_ids = 2785  # default value
+        geofence_group_ids = 2790  # default value
         area_description = f"Kecamatan {file_path.stem}"
         # elif "NusaTenggaraBarat":
             # geofence_group_ids = 2787  # default value
@@ -116,8 +116,10 @@ def batch_process_folder(input_folder, output_folder):
 
 if __name__ == "__main__":
     # Replace these paths with your actual folder paths
-    input_folder = "Z:/Geofence/Kecamatan Indonesia/Converted/KalimantanUtara"
-    output_folder = "Z:/Geofence/Kecamatan Indonesia/Converted/KalimantanUtara/KalimantanUtara-JSON"
+    # input_folder = "Z:/Geofence/Kecamatan Indonesia/Converted/KalimantanUtara"
+    # output_folder = "Z:/Geofence/Kecamatan Indonesia/Converted/KalimantanUtara/KalimantanUtara-JSON"
+    input_folder = "D:/New/Geofence/Kecamatan Indonesia/Converted/BangkaBelitung"
+    output_folder = "D:/New/Geofence/Kecamatan Indonesia/Converted/BangkaBelitung/BangkaBelitung-JSON"
     # Call the batch process function
     
     batch_process_folder(input_folder, output_folder)

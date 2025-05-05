@@ -7,8 +7,10 @@ from qgis.core import (
 )
 
 # Input and output folders — update these paths!
-input_folder = r"Z:/Geofence/Kecamatan Indonesia/SUMATERA/Kecamatan Area Lampung"
-output_folder = r"Z:/Geofence/Kecamatan Indonesia/Converted/Lampung"
+# input_folder = r"Z:/Geofence/Kecamatan Indonesia/SUMATERA/Kecamatan Area Lampung"
+input_folder = r"D:/New/Geofence/Kecamatan Indonesia/SULAWESI/Kecamatan Area Gorontalo"
+# output_folder = r"Z:/Geofence/Kecamatan Indonesia/Converted/Lampung"
+output_folder = r"D:/New/Geofence/Kecamatan Indonesia/Converted/Gorontalo"
 
 # Create output folder if it doesn't exist
 if not os.path.exists(output_folder):
