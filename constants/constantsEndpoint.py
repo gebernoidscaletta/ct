@@ -23,7 +23,7 @@ class ConstantsEndpoint:
         return ConstantsEndpoint._ALERT
     
     @staticmethod
-    def getAlertIgnition():
+    def getAlertIgnitionEndpoint():
         return ConstantsEndpoint._ALERT_IGNITION
 
     @staticmethod
