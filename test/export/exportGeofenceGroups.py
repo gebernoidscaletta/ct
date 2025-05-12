@@ -84,6 +84,7 @@ sequence += 1
 
 # Save to Excel
 # output_file = f"D:/New/Programming/export/BAHA00004_GEOFENCE-GROUP_{sequence}.xlsx"
-output_file = f"Z:/Programming/export/{ConstantsGeneral.getApiUsername()}_GEOFENCE-GROUP_{sequence}.xlsx"
+# output_file = f"Z:/Programming/export/{ConstantsGeneral.getApiUsername()}_GEOFENCE-GROUP_{sequence}.xlsx"
+output_file = f"/home/gebernoid-mattisse-scaletta/Documents/code/export/{ConstantsGeneral.getApiUsername()}_GEOFENCE-GROUP_{sequence}.xlsx"
 df.to_excel(output_file, index=False)
 log.info(f"Export completed : {output_file}")
