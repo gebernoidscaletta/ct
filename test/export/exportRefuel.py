@@ -11,9 +11,9 @@ log = Log()
 fullUrl = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getFuelFillsEndpoint()}"
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
 refuelData = []
-fileDir = "Z:/Programming/export/20250504_220329_BHUM00001_EXPORT-VEHICLES.xlsx"
-startTime = "2025-02-15 00:00:00"
-endTime = "2025-02-25 00:59:59"
+fileDir = "D:/New/Programming/export/20250515_105632_SUMB00030_EXPORT-VEHICLES.xlsx"
+startTime = "2025-05-01 00:00:00"
+endTime = "2025-05-15 00:59:59"
 
 dataSource = pd.read_excel(fileDir)
 log.info(f"File Directory : {fileDir}")
@@ -69,6 +69,7 @@ df.index.name = 'No'
 log.info(df.head())
 
 # Save to Excel
-outputFile = f"Z:/Programming/export/{timestamp}_{ConstantsGeneral.getApiUsername()}_EXPORT-REFUELING.xlsx"
+# outputFile = f"Z:/Programming/export/{timestamp}_{ConstantsGeneral.getApiUsername()}_EXPORT-REFUELING.xlsx"
+outputFile = f"D:/New/Programming/export/{timestamp}_{ConstantsGeneral.getApiUsername()}_EXPORT-REFUELING.xlsx"
 df.to_excel(outputFile, index=False)
 log.info(f"Export completed : {outputFile}")
