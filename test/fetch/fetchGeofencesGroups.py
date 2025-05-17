@@ -4,6 +4,7 @@ from requests.auth import HTTPBasicAuth
 from constants.constantsGeneral import ConstantsGeneral
 from constants.constantsEndpoint import ConstantsEndpoint
 from util.utilLogging import Log
+import json
 
 log = Log()
 fullUrl =  f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceGroupsEndpoint()}"
@@ -41,6 +42,7 @@ while True:
 
     # Load JSON
     result = response.json()
+    # log.info(f"Response Data : \n{json.dumps(result, indent=2)}")
 
     # Extract 'data'
     data = result.get('data', [])
@@ -56,6 +58,7 @@ while True:
             "name": item.get("name"),
             "description": item.get("description")
         })
+    log.info(f"Response Data : \n{json.dumps(geofences, indent=2)}")
 
     # Pagination control
     meta = result.get('meta', {})

@@ -7,13 +7,7 @@ from util.utilLogging import Log
 
 log = Log()
 
-# Base URL
-BASEURL = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
-# BASE_URL = "https://fleetapi-id.cartrack.com/rest/geofences"
-
-# Your Basic Auth credentials
-USERNAME = ConstantsGeneral.getApiUsername()
-PASSWORD = ConstantsGeneral.getApiPassword()
+fullUrl = F"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getGeofenceEndpoint()}"
 
 # Empty list to store geofence data
 geofences = []
@@ -25,9 +19,9 @@ sequence = 3
 
 while True:
     log.info(f"Retrieve All Geofences To XLSX")
-    log.info(f"Username  : {USERNAME}")
+    log.info(f"Username  : {ConstantsGeneral.getApiUsername()}")
     log.info(f"Initialize")
-    log.info(f"Full URL : {BASEURL}")
+    log.info(f"Full URL : {fullUrl}")
     log.info(f"Fetching page {page}")
 
 
@@ -38,7 +32,11 @@ while True:
     }
 
     # Perform the request with Basic Auth
-    response = requests.get(BASEURL, params=params, auth=HTTPBasicAuth(USERNAME, PASSWORD))
+    response = requests.get(fullUrl, 
+                            params = params, 
+                            auth = HTTPBasicAuth(ConstantsGeneral.getApiUsername(), 
+                                                 ConstantsGeneral.getApiPassword())
+                            )
     
     if response.status_code != 200:
         log.error(f"Failed to fetch page {page}. Status Code : {response.status_code}")
@@ -58,7 +56,11 @@ while True:
     for item in data:
         geofences.append({
             "geofence_id": item.get("geofence_id"),
-            "name": item.get("name")
+            "name": item.get("name"),
+            "description" : item.get("description"),
+            "polygon" : item.get("polygon"),
+            "create_ts" : item.get("create_ts"),
+            "update_ts" : item.get("update_ts")
         })
 
     # Pagination control
@@ -82,7 +84,7 @@ df = pd.DataFrame(geofences)
 sequence += 1
 
 # Save to Excel
-# output_file = f"Z:/Programming/export/{ConstantsGeneral.getApiUsername()}_EXPORT-GEOFENCE_{sequence}.xlsx"
-output_file = f"/home/gebernoid-mattisse-scaletta/Documents/code/export/{ConstantsGeneral.getApiUsername()}_EXPORT-GEOFENCE_{sequence}.xlsx"
+output_file = f"Z:/Programming/export/{ConstantsGeneral.getApiUsername()}_EXPORT-GEOFENCE_{sequence}.xlsx"
+# output_file = f"/home/gebernoid-mattisse-scaletta/Documents/code/export/{ConstantsGeneral.getApiUsername()}_EXPORT-GEOFENCE_{sequence}.xlsx"
 df.to_excel(output_file, index=False)
 log.info(f"Export completed : {output_file}")

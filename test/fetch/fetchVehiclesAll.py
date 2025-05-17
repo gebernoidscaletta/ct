@@ -9,7 +9,7 @@ from util.utilLogging import Log
 
 log = Log()
 fullUrl = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getVehicleEndpoint()}"
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
 vehicleData = []
 
 # Pagination start

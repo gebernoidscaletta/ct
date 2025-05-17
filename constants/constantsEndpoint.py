@@ -6,7 +6,10 @@ class ConstantsEndpoint:
     _ALERT_GEOFENCES = "/alerts/geofences"
     _ALERT_NOTIFICATION = "/alerts/notifications"
     _ALERT_NOTIFICATION_TYPES = "/alert/notifications/types"
+    _FUEL_CONSUMED = "/fuel/consumed"
     _FUEL_FILLS = "/fuel/fills"
+    _FUEL_LEVEL = "/fuel/level"
+    _FUEL_LEVEL_HISTORY = "/fuel/level/history"
     _VEHICLES = "/vehicles"
     _VEHICLES_GROUPS = "/vehicles/groups"
 
@@ -35,8 +38,20 @@ class ConstantsEndpoint:
         return ConstantsEndpoint._ALERT_NOTIFICATION
     
     @staticmethod
+    def getFuelConsumedEndpoint():
+        return ConstantsEndpoint._FUEL_CONSUMED
+    
+    @staticmethod
     def getFuelFillsEndpoint():
         return ConstantsEndpoint._FUEL_FILLS
+    
+    @staticmethod
+    def getFuelLevelEndpoint():
+        return ConstantsEndpoint._FUEL_LEVEL
+    
+    @staticmethod
+    def getFuelLevelHistoryEndpoint():
+        return ConstantsEndpoint._FUEL_LEVEL_HISTORY
     
     @staticmethod
     def getVehicleEndpoint():
