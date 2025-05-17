@@ -12,6 +12,7 @@ class ConstantsEndpoint:
     _FUEL_LEVEL_HISTORY = "/fuel/level/history"
     _VEHICLES = "/vehicles"
     _VEHICLES_GROUPS = "/vehicles/groups"
+    _VEHICLES_STATUS = "/vehicles/status"
 
     @staticmethod
     def getGeofenceEndpoint():
@@ -60,3 +61,7 @@ class ConstantsEndpoint:
     @staticmethod
     def getVehicleGroupsEndpoint():
         return ConstantsEndpoint._VEHICLES_GROUPS
+    
+    @staticmethod
+    def getVehiclesStatusEndpoint():
+        return ConstantsEndpoint._VEHICLES_STATUS

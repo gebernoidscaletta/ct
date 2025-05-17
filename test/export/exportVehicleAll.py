@@ -9,7 +9,7 @@ from util.utilLogging import Log
 
 log = Log()
 fullUrl = f"{ConstantsGeneral.getIndonesiaBaseUrl()}{ConstantsEndpoint.getVehicleEndpoint()}"
-timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 vehicleData = []
 
 # Pagination start
@@ -108,10 +108,9 @@ while True:
     
 # Create DataFrame
 df = pd.DataFrame(vehicleData)
-log.info("DataFrame")
-log.info(df)
 
 # Save to Excel
 # output_file = f"Z:/Programming/export/{timestamp}_{ConstantsGeneral.getApiUsername()}_EXPORT-VEHICLES.xlsx"
-# df.to_excel(output_file, index=False)
-# log.info(f"Export completed : {output_file}")
+output_file = f"D:/New/Programming/export/{timestamp}_{ConstantsGeneral.getApiUsername()}_EXPORT-VEHICLES.xlsx"
+df.to_excel(output_file, index=False)
+log.info(f"Export completed : {output_file}")
